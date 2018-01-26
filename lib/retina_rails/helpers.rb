@@ -47,7 +47,9 @@ module ActionView
 
         image_tag_without_retina(source, options)
       end
-      alias_method_chain :image_tag, :retina
+      # alias_method_chain :image_tag, :retina
+      alias_method :image_tag_without_retina, :image_tag
+      alias_method :image_tag, :retina_image_tag
 
     end # AssetTagHelper
   end # Helpers
